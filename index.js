@@ -3,17 +3,20 @@ const proxy = require('http-proxy-middleware');
 const btoa = require('btoa');
 const app = express();
 const bodyParser = require('body-parser')
+const cors = require('cors');
+
+app.use(cors());
 
 /* This is where we specify options for the http-proxy-middleware
  * We set the target to appbase.io backend here. You can also
  * add your own backend url here */
 const options = {
-    target: 'https://scalr.api.appbase.io/',
+    target: 'http://localhost:8095/',
     changeOrigin: true,
     onProxyReq: (proxyReq, req) => {
         proxyReq.setHeader(
             'Authorization',
-            `Basic ${btoa('cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c')}`
+            `Basic ${btoa('admin:admin')}`
         );
         /* transform the req body back from text */
         const { body } = req;
@@ -29,6 +32,20 @@ const options = {
 
 /* Parse the ndjson as text */
 app.use(bodyParser.text({ type: 'application/x-ndjson' }));
+
+app.post('/good-books-ds/_msearch', (req, res) => {
+    try {
+        const { body } = req;
+        console.log("POST");
+        //console.log(JSON.stringify(req.body, null, 2));
+        console.log(body);
+        res.sendStatus(200);
+    } catch (error) {
+        let message = error;
+        console.error("Error: /good-books-ds/_msearch", message);
+    }
+
+});
 
 /* This is how we can extend this logic to do extra stuff before
  * sending requests to our backend for example doing verification
