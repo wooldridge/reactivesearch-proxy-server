@@ -8,12 +8,12 @@ const bodyParser = require('body-parser')
  * We set the target to appbase.io backend here. You can also
  * add your own backend url here */
 const options = {
-    target: 'https://scalr.api.appbase.io/',
+    target: 'https://appbase-demo-ansible-abxiydt-arc.searchbase.io/',
     changeOrigin: true,
     onProxyReq: (proxyReq, req) => {
         proxyReq.setHeader(
             'Authorization',
-            `Basic ${btoa('cf7QByt5e:d2d60548-82a9-43cc-8b40-93cbbe75c34c')}`
+            `Basic ${btoa('a03a1cb71321:75b6603d-9456-4a5a-af6b-a487b309eb61')}`
         );
         /* transform the req body back from text */
         const { body } = req;
