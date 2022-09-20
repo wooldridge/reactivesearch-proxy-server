@@ -1,5 +1,5 @@
 const express = require('express');
-const proxy = require('http-proxy-middleware');
+const { createProxyMiddleware, responseInterceptor } = require('http-proxy-middleware');
 const btoa = require('btoa');
 const app = express();
 const bodyParser = require('body-parser')
@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 /* This is where we specify options for the http-proxy-middleware
  * We set the target to appbase.io backend here. You can also
  * add your own backend url here */
-const options = {
+const proxy = createProxyMiddleware({
     target: 'https://appbase-demo-ansible-abxiydt-arc.searchbase.io/',
     changeOrigin: true,
     onProxyReq: (proxyReq, req) => {
@@ -24,8 +24,17 @@ const options = {
                 proxyReq.write(body);
             }
         }
-    }
-}
+    },
+    selfHandleResponse: true,
+    /**
+    * Intercept response and transform
+    **/
+    onProxyRes: responseInterceptor(async (responseBuffer, proxyRes, req, res) => {
+        const response = responseBuffer.toString('utf8'); // convert buffer to string
+        console.log("responseInterceptor", JSON.stringify(response, null, 2));
+        return response;
+    }),
+});
 
 /* Parse the ndjson as text */
 app.use(bodyParser.text({ type: 'application/x-ndjson' }));
@@ -43,6 +52,6 @@ app.use((req, res, next) => {
 })
 
 /* Here we proxy all the requests from reactivesearch to our backend */
-app.use('*', proxy(options));
+app.use('*', proxy);
 
 app.listen(7777, () => console.log('Server running at http://localhost:7777 🚀'));
