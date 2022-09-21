@@ -1,0 +1,158 @@
+{
+  "took": 21,
+  "responses": [
+    {
+      "took": 20,
+      "timed_out": false,
+      "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 9418,
+          "relation": "eq"
+        },
+        "max_score": 1.0,
+        "hits": [
+          {
+            "_index": "good-books-ds",
+            "_id": "gnbOPoMBzjjvNeUj1Hj4",
+            "_score": 1.0,
+            "_source": {
+              "image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+              "average_rating_rounded": 4,
+              "books_count": 94,
+              "original_title": "True Grit",
+              "image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+              "isbn": "1585673692",
+              "average_rating": 4.12,
+              "original_publication_year": 1968,
+              "availability": "",
+              "title": "True Grit",
+              "average-rating": "",
+              "language_code": "en-US",
+              "id": 4464,
+              "ratings_count": 21199,
+              "original_series": "",
+              "authors": "<b>Charles Portis</b><script>alert(\"xss attach\")</script><img src=\"javascript:alert('XSS');\">",
+              "timestamp": "2021-04-07"
+            }
+          },
+          {
+            "_index": "good-books-ds",
+            "_id": "g3bOPoMBzjjvNeUj1Hj4",
+            "_score": 1.0,
+            "_source": {
+              "image": "https://images.gr-assets.com/books/1343084394l/10193062.jpg",
+              "average_rating_rounded": 4,
+              "books_count": 23,
+              "original_title": "Outpost",
+              "image_medium": "https://images.gr-assets.com/books/1343084394m/10193062.jpg",
+              "isbn": "312650094",
+              "average_rating": 4.12,
+              "original_publication_year": 2012,
+              "title": "Outpost (Razorland, #2)",
+              "language_code": "en-US",
+              "id": 4705,
+              "ratings_count": 25650,
+              "original_series": "Razorland",
+              "authors": "Ann Aguirre"
+            }
+          },
+          {
+            "_index": "good-books-ds",
+            "_id": "hHbOPoMBzjjvNeUj1Hj4",
+            "_score": 1.0,
+            "_source": {
+              "image": "https://images.gr-assets.com/books/1386609333l/18176747.jpg",
+              "average_rating_rounded": 4,
+              "books_count": 20,
+              "original_title": "The Hard Thing about Hard Things: Building A Business When There Are No Easy Answers",
+              "image_medium": "https://images.gr-assets.com/books/1386609333m/18176747.jpg",
+              "isbn": "62273205",
+              "average_rating": 4.2,
+              "original_publication_year": 2014,
+              "title": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers",
+              "language_code": "eng",
+              "id": 4953,
+              "ratings_count": 19492,
+              "original_series": "",
+              "authors": "rowitz",
+              "timestamp": "2021-03-01"
+            }
+          },
+          {
+            "_index": "good-books-ds",
+            "_id": "hXbOPoMBzjjvNeUj1Hj4",
+            "_score": 1.0,
+            "_source": {
+              "image": "https://images.gr-assets.com/books/1327910301l/17716.jpg",
+              "average_rating_rounded": 4,
+              "books_count": 187,
+              "original_title": "En attendant Godot",
+              "image_medium": "https://images.gr-assets.com/books/1327910301m/17716.jpg",
+              "isbn": "",
+              "average_rating": "3.81",
+              "original_publication_year": 1952,
+              "availability": "",
+              "title": "Waiting for Godot",
+              "language_code": "eng",
+              "id": 934,
+              "ratings_count": 98950,
+              "original_series": "",
+              "authors": "Samuel Beckett",
+              "timestamp": "2021-02-01"
+            }
+          },
+          {
+            "_index": "good-books-ds",
+            "_id": "hnbOPoMBzjjvNeUj1Hj4",
+            "_score": 1.0,
+            "_source": {
+              "image": "https://images.gr-assets.com/books/1298426240l/51362.jpg",
+              "average_rating_rounded": 4,
+              "books_count": 42,
+              "original_title": "The Survivors Club",
+              "image_medium": "https://images.gr-assets.com/books/1298426240m/51362.jpg",
+              "isbn": "553589458",
+              "average_rating": 4.05,
+              "original_publication_year": 2002,
+              "title": "The Survivors Club",
+              "language_code": "eng",
+              "id": 9592,
+              "ratings_count": 11458,
+              "original_series": "",
+              "authors": "Lisa Gardner",
+              "timestamp": "2020-12-01"
+            }
+          },
+          {
+            "_index": "good-books-ds",
+            "_id": "h3bOPoMBzjjvNeUj1Hj4",
+            "_score": 1.0,
+            "_source": {
+              "image": "https://images.gr-assets.com/books/1405292426l/20685373.jpg",
+              "average_rating_rounded": 4,
+              "books_count": 18,
+              "original_title": "Without You, There Is No Us: My Time with the Sons of North Korea's Elite",
+              "image_medium": "https://images.gr-assets.com/books/1405292426m/20685373.jpg",
+              "isbn": "307720659",
+              "average_rating": 3.85,
+              "original_publication_year": 2014,
+              "title": "Without You, There Is No Us: My Time with the Sons of North Korea's Elite",
+              "language_code": "",
+              "id": 9847,
+              "ratings_count": 8164,
+              "original_series": "",
+              "authors": "Suki Kim"
+            }
+          }
+        ]
+      },
+      "status": 200
+    }
+  ]
+}
