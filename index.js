@@ -43,7 +43,7 @@ const proxy = createProxyMiddleware({
     }),
 });
 
-const baseUrl = "http://localhost:8099";
+const baseUrl = "http://localhost:8095";
 
 // fast-xml-parser: https://github.com/NaturalIntelligence/fast-xml-parser
 const options = {

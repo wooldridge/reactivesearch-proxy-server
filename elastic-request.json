@@ -1,0 +1,84 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "bool": {
+            "must": [
+              {
+                "bool": {
+                  "should": [
+                    {
+                      "multi_match": {
+                        "query": "Kip",
+                        "fields": [
+                          "content.person.nameGroup.fullname.value"
+                        ],
+                        "type": "best_fields",
+                        "operator": "or",
+                        "fuzziness": 0
+                      }
+                    },
+                    {
+                      "multi_match": {
+                        "query": "Kip",
+                        "fields": [
+                          "content.person.nameGroup.fullname.value"
+                        ],
+                        "type": "phrase",
+                        "operator": "or"
+                      }
+                    },
+                    {
+                      "multi_match": {
+                        "query": "Kip",
+                        "fields": [
+                          "content.person.nameGroup.fullname.value"
+                        ],
+                        "type": "phrase_prefix",
+                        "operator": "or"
+                      }
+                    }
+                  ],
+                  "minimum_should_match": "1"
+                }
+              },
+              {
+                "bool": {
+                  "should": [
+                    {
+                      "terms": {
+                        "country": [
+                          "Mexico"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "size": 5,
+  "_source": {
+    "includes": [
+      "*"
+    ],
+    "excludes": []
+  },
+  "aggs": {
+    "country": {
+      "terms": {
+        "field": "country",
+        "size": 10,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  },
+  "from": 0
+}
